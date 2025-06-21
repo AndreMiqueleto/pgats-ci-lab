@@ -10,10 +10,7 @@ name: 'Execução Integrada'
 
 on:
   workflow_dispatch:
-    workflows: ['Execução Manual']
-    types:
-      - completed
-
+  
 # trabalhos/tarefas dentro do pipeline = jobs
 jobs:
   inspecao:
@@ -36,6 +33,7 @@ jobs:
       
       - name: Checando padronizacao do código
         run: yarn lint
+
   unidade:
     runs-on: ubuntu-latest
 
