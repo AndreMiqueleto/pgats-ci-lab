@@ -9,7 +9,7 @@ name: 'Execução Agendada'
 on:
   schedule:
     - cron: '0 6 * * 1'
-# cron: 
+# cron:
 # a - minuto
 # b - hora
 # c - dia do mes
@@ -19,7 +19,6 @@ on:
 # trabalhos/tarefas dentro do pipeline = jobs
 jobs:
   e2e-tests:
-
     #maquina que o job vai executar
     runs-on: ubuntu-latest
 
@@ -44,8 +43,7 @@ jobs:
       # instalacao do Playwright
       - name: Instalando Playwright
         run: yarn playwright install
-      
+
       # executar os testes e2e
       - name: Executando Testes e2e
         run: yarn run e2e
-

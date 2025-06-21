@@ -10,11 +10,10 @@ name: 'Execução Integrada'
 
 on:
   workflow_dispatch:
-  
+
 # trabalhos/tarefas dentro do pipeline = jobs
 jobs:
   inspecao:
-
     #maquina que o job vai executar
     runs-on: ubuntu-latest
 
@@ -30,7 +29,7 @@ jobs:
       # instalacao das dependencias
       - name: Instalando dependências
         run: yarn
-      
+
       - name: Checando padronizacao do código
         run: yarn lint
 
@@ -48,15 +47,15 @@ jobs:
       # instalacao das dependencias
       - name: Instalando dependências
         run: yarn
-      
+
       - name: Executando testes de unidade
         run: yarn test
 
   e2e-tests:
     runs-on: ubuntu-latest
-    
+
     steps:
-     # clone do projeto
+      # clone do projeto
       - uses: actions/checkout@v4
 
       # instalacao do node
@@ -75,7 +74,7 @@ jobs:
       # instalacao do Playwright
       - name: Instalando Playwright
         run: yarn playwright install
-      
+
       # executar os testes e2e
       - name: Executando Testes e2e
         run: yarn run e2e
